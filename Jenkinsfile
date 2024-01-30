@@ -20,7 +20,6 @@ pipeline {
             }
         }
         stage('Deploy') { 
-            steps {
             input {
                 message "Should we continue?"
                 ok "Yes, we should."
@@ -29,6 +28,8 @@ pipeline {
                     string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
                 }
             }
+            steps {
+            
                sh """
                     echo  "this is deploy stage"
                 """
